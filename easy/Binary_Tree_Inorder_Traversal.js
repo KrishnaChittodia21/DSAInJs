@@ -15,6 +15,21 @@ var inorderTraversal = function (root) {
   return [...left, root.val, ...right]
 }
 
+const inorderTraversalIterative = (root) => {
+  const stack = []
+  const result = []
+  while (root || stack.length) {
+    while (root) {
+      stack.push(root)
+      root = root.left
+    }
+    root = stack.pop()
+    result.push(root.val)
+    root = root.right
+  }
+  return result
+}
+
 const root = new TreeNode(
   1,
   new TreeNode(2, new TreeNode(3, null), new TreeNode(4, null)),
