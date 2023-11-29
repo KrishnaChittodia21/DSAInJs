@@ -9,4 +9,5 @@ var singleNumber = function (nums) {
   }
   return result
 }
+
 console.log(singleNumber([2, 2, 1]))
