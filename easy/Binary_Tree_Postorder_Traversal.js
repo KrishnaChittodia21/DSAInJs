@@ -16,3 +16,18 @@ var postorderTraversal = function (root) {
   const right = postorderTraversal(root.left)
   return [...right, ...left, root.val]
 }
+
+const postorderTraversalIterative = (root) => {
+  const stack = []
+  const result = []
+  while (root || stack.length) {
+    while (root) {
+      stack.push(root)
+      root = root.left
+    }
+    root = stack.pop()
+    result.push(root.val)
+    root = root.right
+  }
+  return result
+}

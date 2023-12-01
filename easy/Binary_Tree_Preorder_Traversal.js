@@ -16,3 +16,16 @@ var preorderTraversal = function (root) {
   const right = preorderTraversal(root.right)
   return [root.val, ...left, ...right]
 }
+
+const preorderTraversalIterative = (root) => {
+  const stack = [root]
+  const result = []
+  while (stack.length) {
+    const node = stack.pop()
+    if (!node) continue
+    result.push(node.val)
+    stack.push(node.right)
+    stack.push(node.left)
+  }
+  return resultc
+}
