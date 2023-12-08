@@ -20,3 +20,16 @@ var hasPathSum = function (root, targetSum) {
     hasPathSum(root.right, targetSum - root.val)
   )
 }
+
+const helper = (root, target, sum) => {
+  if (!root) return false
+  if (!root.left && !root.right) return target === sum + root.val
+  return (
+    helper(root.left, target, sum + root.val) ||
+    helper(root.right, target, sum + root.val)
+  )
+}
+var hasPathSum2 = function (root, targetSum) {
+  if (!root) return false
+  return helper(root, targetSum, 0)
+}
