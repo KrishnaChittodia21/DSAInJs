@@ -33,3 +33,15 @@ var hasPathSum2 = function (root, targetSum) {
   if (!root) return false
   return helper(root, targetSum, 0)
 }
+
+var hasPathSumIterative = function (root, targetSum) {
+  const stk = [[root, targetSum]]
+  while (stk.length) {
+    const [node, sum] = stk.pop()
+    if (!node) continue
+    if (!node.left && !node.right && sum - node.val === 0) return true
+    if (node.left) stk.push([node.left, sum - node.val])
+    if (node.right) stk.push([node.right, sum - node.val])
+  }
+  return false
+}
