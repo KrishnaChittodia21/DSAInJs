@@ -27,5 +27,5 @@ const preorderTraversalIterative = (root) => {
     stack.push(node.right)
     stack.push(node.left)
   }
-  return resultc
+  return result
 }
