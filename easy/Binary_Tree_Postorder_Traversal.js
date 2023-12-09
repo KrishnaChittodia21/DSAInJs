@@ -31,3 +31,17 @@ const postorderTraversalIterative = (root) => {
   }
   return result
 }
+
+var postorderTraversalBetter = function (root) {
+  if (!root) return []
+  const stk = [root]
+  const res = []
+  while (stk.length) {
+    const node = stk.pop()
+    res.unshift(node.val)
+    if (node.left) stk.push(node.left)
+    if (node.right) stk.push(node.right)
+  }
+
+  return res
+}
