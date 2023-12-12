@@ -1,3 +1,9 @@
+/**
+ * @param {number[][]} mat
+ * @param {number} k
+ * @return {boolean}
+ */
+
 const checkArray = (arr1, arr2) => {
   if (arr1.length !== arr2.length) return false
   for (let i = 0; i < arr1.length; i++) {
@@ -21,11 +27,3 @@ var areSimilar = function (mat, k) {
   }
   return true
 }
-const mat = [
-  [1, 2, 1, 2],
-  [5, 5, 5, 5],
-  [6, 3, 6, 3],
-]
-const mat2 = [[1, 2]]
-const k = 1
-console.log(areSimilar(mat2, k))
