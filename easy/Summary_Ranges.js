@@ -5,22 +5,20 @@
 var summaryRanges = function (nums) {
   let i = 0
   let j = 1
-  let count = 0
   const arr = []
   while (j < nums.length) {
     if (nums[j] - nums[j - 1] !== 1) {
-      if (count === 0) {
-        arr.push(`${nums[i]}`)
-      } else {
-        arr.push(`${nums[i]}->${nums[j - 1]}`)
-      }
-      count = 0
+      arr.push(
+        nums[i] === nums[j - 1] ? `${nums[i]}` : `${nums[i]}->${nums[j - 1]}`
+      )
       i = j
     }
-    count++
     j++
   }
+  arr.push(
+    nums[i] === nums[j - 1] ? `${nums[i]}` : `${nums[i]}->${nums[j - 1]}`
+  )
   return arr
 }
 
-console.log(summaryRanges([0, 2, 3, 4, 6, 8, 9]))
+console.log(summaryRanges([0, 1, 2, 4, 5, 7]))
