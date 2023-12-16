@@ -4,14 +4,17 @@
  * @return {number}
  */
 var findContentChildren = function (g, s) {
-  let count = 0
-  for (let num of g) {
-    if (s.includes(num)) {
-      count++
-      s = s.filter((val) => val !== num)
+  g.sort((a, b) => a - b)
+  s.sort((a, b) => a - b)
+  let i = 0
+  let j = 0
+  while (i < g.length && j < s.length) {
+    if (g[i] <= s[j]) {
+      i++
     }
+    j++
   }
-  return count
+  return i
 }
 
 const g = [
