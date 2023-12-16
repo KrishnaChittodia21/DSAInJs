@@ -1,17 +1,21 @@
 /**
  * @param {number[]} nums
- * @return {number}
+ * @return {number[]}
  */
-var thirdMax = function (nums) {
+var findDisappearedNumbers = function (nums) {
   const arr = [...new Set(nums)].sort((a, b) => a - b)
-  if (arr.length === 1) return arr[0]
-  if (arr.length === 2) return Math.max(arr[0], arr[1])
-  return arr[arr.length - 3]
+  const res = []
+  let prev = 1
+  for (let i = 0; i < nums.length; i++) {
+    if (prev === arr[i]) {
+      prev++
+      continue
+    }
+    if (!arr.includes(prev)) [res.push(prev)]
+    prev++
+  }
+  return res
 }
 
-console.log(
-  thirdMax([
-    3, 2, 3, 1, 2, 4, 5, 5, 6, 7, 7, 8, 2, 3, 1, 1, 1, 10, 11, 5, 6, 2, 4, 7, 8,
-    5, 6,
-  ])
-)
+console.log(findDisappearedNumbers([1, 1]))
+// console.log(findDisappearedNumbers([4, 3, 2, 7, 8, 2, 3, 1]))
