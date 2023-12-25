@@ -18,5 +18,3 @@ var minimumDifference = function (nums, k) {
   }
   return res
 }
-
-console.log(minimumDifference([9, 4, 1, 7], 2))
