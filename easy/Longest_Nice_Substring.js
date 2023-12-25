@@ -30,8 +30,17 @@ const isNice = (substring) => {
   return true
 }
 
-console.log(longestNiceSubstring('YazaAay'))
-console.log(longestNiceSubstring('Bb'))
-console.log(longestNiceSubstring('c'))
-console.log(longestNiceSubstring('dDzeE'))
-console.log(longestNiceSubstring('abABB'))
+// recursion
+const longestNiceSubstringRecur = (s) => {
+  if (s.length <= 1) return ''
+  const set = new Set(s)
+  for (let i = 0; i < s.length; i++) {
+    if (set.has(s[i].toLowerCase()) && set.has(s[i].toUpperCase())) continue
+    const left = longestNiceSubstringRecur(s.substring(0, i))
+    const right = longestNiceSubstringRecur(s.substring(i + 1))
+    return left.length >= right.length ? left : right
+  }
+  return s
+}
+
+console.log(longestNiceSubstringRecur('YazaAay'))
