@@ -5,7 +5,7 @@
  */
 var minimumRecolors = function (blocks, k) {
   let curr = 0
-  let final = Number.MAX_SAFE_INTEGER
+  let final = Number.MAX_SAFE_INTEGERA
   let str = ''
   for (let block of blocks) {
     str += block
@@ -26,8 +26,3 @@ var minimumRecolors = function (blocks, k) {
   }
   return final
 }
-
-console.log(minimumRecolors('WBBWWBBWBW', 7))
-console.log(minimumRecolors('WBWBBBW', 2))
-console.log(minimumRecolors('BBWBBBW', 2))
-console.log(minimumRecolors('WBBWWWWBBWWBBBBWWBBWWBBBWWBBBWWWBWBWW', 15))
