@@ -5,24 +5,20 @@
  */
 var minimumRecolors = function (blocks, k) {
   let curr = 0
-  let final = Number.MAX_SAFE_INTEGER
-  let str = ''
-  for (let block of blocks) {
-    str += block
-    if (str.length === k) {
-      if (str === 'B'.repeat(k)) return 0
-      str = str.slice(1)
-    }
+  let final = 0
+  let start = 0
+  let end = 0
+  while (end < k) {
+    if (blocks[end] === 'W') curr++
+    end++
   }
-  str = ''
-  for (let block of blocks) {
-    str += block
-    if (block === 'W') curr++
-    if (str.length === k) {
-      final = Math.min(final, curr)
-      curr = str.charAt(0) === 'W' ? --curr : curr
-      str = str.slice(1)
-    }
+  final = curr
+  while (end < blocks.length) {
+    if (blocks[start] === 'W') curr--
+    if (blocks[end] === 'W') curr++
+    final = Math.min(final, curr)
+    start++
+    end++
   }
   return final
 }
