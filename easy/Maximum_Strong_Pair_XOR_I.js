@@ -13,8 +13,3 @@ var maximumStrongPairXor = function (nums) {
   }
   return xor
 }
-
-// console.log(maximumStrongPairXor([1, 2, 3, 4, 5]))
-// console.log(maximumStrongPairXor([10, 100]))
-// console.log(maximumStrongPairXor([5, 6, 25, 30]))
-console.log(maximumStrongPairXor([1, 5, 4, 1, 7]))
