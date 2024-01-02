@@ -1,10 +1,6 @@
-const arr = [
-  [1, 3],
-  [2, 2],
-]
-const flatArray = (arr) => {
-  return arr.reduce((acc, curr) => {
-    return acc.concat(Array?.isArray(curr) ? flatArray(curr) : curr)
-  }, [])
+function getAllSubarrays(nums) {
+  const unique = [...new Set(nums)]
+  return 2 ** (unique.length * 2) - 1
 }
-console.log(flatArray(arr))
+
+console.log(getAllSubarrays([1, 2, 1]))
