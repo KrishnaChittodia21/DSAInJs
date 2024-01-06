@@ -1,1 +1,1 @@
-console.log(10 ^ 7)
+console.log(2 ** 3)
