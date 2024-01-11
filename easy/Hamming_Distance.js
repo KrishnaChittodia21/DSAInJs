@@ -15,3 +15,4 @@ var hammingDistance = function (x, y) {
 
 console.log(hammingDistance(1, 4))
 console.log(hammingDistance(1, 3))
+console.log(hammingDistance(1, 5))
