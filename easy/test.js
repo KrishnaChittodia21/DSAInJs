@@ -12,3 +12,5 @@
 const n = 0o10100101000001111000000000
 const str = n.toString(2).split(',').reverse()
 console.log(str)
+const cc = 'q'
+console.log(cc)
