@@ -9,5 +9,6 @@
 //   console.log(num, count)
 // }
 // console.log(Number.parseInt('101'))
-const n = 0o1011
-console.log(n.toString().replaceAll('0', '').length)
+const n = 0o10100101000001111000000000
+const str = n.toString(2).split(',').reverse()
+console.log(str)
