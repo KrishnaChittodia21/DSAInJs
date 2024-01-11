@@ -7,6 +7,7 @@ var toHex = function (num) {
   const hex = '0123456789abcdef'
   let res = ''
   while (num !== 0) {
+    console.log(num & 0xf)
     const digit = hex[num & 0xf]
     res = digit + res
     num >>>= 4
