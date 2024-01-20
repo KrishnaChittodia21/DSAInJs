@@ -12,21 +12,14 @@ var kWeakestRows = function (mat, k) {
       value: count,
     })
   }
-  solDierCount.sort((a, b) => a.value - b.value)
+  solDierCount.sort((a, b) => {
+    if (a.value !== b.value) return a.value - b.value
+    return a.index - b.index
+  })
   if (k === solDierCount.length) {
     return solDierCount.map((x) => x.index)
   }
-  let i = 1
-  const res = []
-  while (k > 0) {
-    console.log(i)
-    if (solDierCount[i - 1].value <= solDierCount[i].value) {
-      res.push(solDierCount[i - 1].index)
-    }
-    i++
-    k--
-  }
-  return res
+  return solDierCount.slice(0, k).map((x) => x.index)
 }
 
 // console.log(
