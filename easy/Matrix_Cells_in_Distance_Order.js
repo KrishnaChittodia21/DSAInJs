@@ -5,7 +5,7 @@
  * @param {number} cCenter
  * @return {number[][]}
  */
-// var allCellsDistOrder = function (rows, cols, rCenter, cCenter) {
+// var allCellsDistOrder1 = function (rows, cols, rCenter, cCenter) {
 //   const res = []
 //   for (let i = 0; i < rows; i++) {
 //     for (let j = 0; j < cols; j++) {
