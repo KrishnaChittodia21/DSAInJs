@@ -44,7 +44,6 @@ const isCousinsIterative = (root, x, y) => {
       stk.push({ node: node.right, parent: node, depth: depth + 1 })
     if (xData && yData) break
   }
-
   return xData.depth === yData.depth && xData.parent !== yData.parent
 }
 
