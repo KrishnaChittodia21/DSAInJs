@@ -21,6 +21,20 @@ var invertTree = function (root) {
   return root
 }
 
+const invertTreeIterative = (root) => {
+  const stk = [root]
+  while (stk.length) {
+    const node = stk.pop()
+    if (!node) continue
+    if (node.left) stk.push(node.left)
+    if (node.right) stk.push(node.right)
+    const temp = node.left
+    node.left = node.right
+    node.right = temp
+  }
+  return root
+}
+
 const root = {
   val: 4,
   left: {
@@ -51,4 +65,4 @@ const root = {
   },
 }
 
-console.log(invertTree(root))
+console.log(invertTreeIterative(root))
