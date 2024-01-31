@@ -43,11 +43,11 @@ const diameterOfBinaryTreeIterative = (root) => {
   const stk = [[root, 0]]
   let max = 0
   while (stk.length) {
-    const [root, height] = stk.pop()
+    const [root, diameter] = stk.pop()
     if (!root) continue
     max = Math.max(max, height(node.left) + height(node.right))
-    if (root.left) stk.push([root.left, height + 1])
-    if (root.right) stk.push([root.right, height + 1])
+    if (root.left) stk.push([root.left, diameter + 1])
+    if (root.right) stk.push([root.right, diameter + 1])
   }
   return max
 }
