@@ -23,12 +23,11 @@ const preorderIterative = (root) => {
   const stk = [root]
   const res = []
   while (stk.length) {
-    const node = stk.pop()
     if (!node) continue
-    res.push(node.val)
     for (let i = node.children.length - 1; i >= 0; i--) {
       stk.push(node.children[i])
     }
+    res.push(node.val)
   }
   return res
 }
