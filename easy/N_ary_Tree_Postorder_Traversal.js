@@ -10,7 +10,7 @@
  * @param {Node|null} root
  * @return {number[]}
  */
-var postorder = function (root) {
+var postorderIterative = function (root) {
   if (!root) return []
   const stk = [root]
   const res = []
