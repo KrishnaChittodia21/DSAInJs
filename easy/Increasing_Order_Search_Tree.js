@@ -27,3 +27,25 @@ var increasingBST = function (root) {
   dfs(root)
   return res
 }
+
+const increasingBSTIterative = (root) => {
+  let prev = null
+  let res = null
+  const stk = []
+  while (root || stk.length) {
+    while (root) {
+      stk.push(root)
+      root = root.left
+    }
+    root = stk.pop()
+    if (!res) {
+      res = root
+    } else {
+      prev.right = root
+      root.left = null
+    }
+    prev = root
+    root = root.right
+  }
+  return res
+}
