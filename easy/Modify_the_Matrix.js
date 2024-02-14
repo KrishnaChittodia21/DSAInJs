@@ -26,6 +26,25 @@ var modifiedMatrix = function (matrix) {
   return answer
 }
 
+var modifiedMatrixOptimized = function (matrix) {
+  const row = matrix.length
+  const col = matrix[0].length
+  const maxColMatrix = new Array(col).fill(-Infinity)
+  for (let i = 0; i < col; i++) {
+    for (let j = 0; j < row; j++) {
+      maxColMatrix[i] = Math.max(maxColMatrix[i], matrix[j][i])
+    }
+  }
+  for (let i = 0; i < row; i++) {
+    for (let j = 0; j < col; j++) {
+      if (matrix[i][j] === -1) {
+        matrix[i][j] = maxColMatrix[j]
+      }
+    }
+  }
+  return matrix
+}
+
 const matrix = [
   [2, -1, 2, -1, 2],
   [1, 0, -1, 2, -1],
