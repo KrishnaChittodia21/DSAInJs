@@ -7,10 +7,13 @@ var flat = function (arr, n) {
   if (n === 0) {
     return arr
   }
+  const res = []
   for (let i = 0; i < arr.length; i++) {
     if (Array.isArray(arr[i])) {
-      flat(arr[i], n - 1)
+      res.push(...flat(arr[i], n - 1))
+    } else {
+      res.push(arr[i])
     }
   }
-  return arr
+  return res
 }
